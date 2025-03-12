@@ -1,0 +1,231 @@
+/* Light Mode Variables */
+:root {
+  --primary-bg: #f5f6fa;
+  --primary-text: #333;
+  --secondary-text: #555;
+  --accent-color: #1976d2;
+  --card-bg: #ffffff;
+  --border-color: #ddd;
+  --shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  --task-bg: #f3f4f6;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --primary-bg: #1e1e2f;
+  --primary-text: #ffffff;
+  --secondary-text: #bbb;
+  --accent-color: #61dafb;
+  --card-bg: #2a2a3a;
+  --border-color: #444;
+  --shadow: 0px 2px 6px rgba(255, 255, 255, 0.1);
+  --task-bg: #2e2e3f;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* App Container */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+  padding: 12px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-text);
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--primary-text);
+  font-weight: 600;
+  padding: 8px 12px;
+  margin: 0 6px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Search Bar */
+.search-bar {
+  background-color: var(--task-bg);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease-in-out;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--primary-text);
+  padding-left: 6px;
+}
+
+/* Project Cards Grid */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 80px 20px 20px; /* Adjusted for navbar */
+}
+
+/* Individual Project Card */
+.project-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Project Title */
+.project-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--primary-text);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.project-title .star {
+  color: #ffb400;
+  margin-right: 6px;
+}
+
+/* Project Details */
+.project-details {
+  font-size: 12px;
+  color: var(--secondary-text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-date {
+  font-size: 12px;
+  color: var(--secondary-text);
+}
+
+/* Tags (e.g., External, Internal) */
+.tag {
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.tag-external {
+  background-color: #f7d774;
+  color: #6d5300;
+}
+
+.tag-internal {
+  background-color: #d4e2ff;
+  color: #0044cc;
+}
+
+.tag-experiment {
+  background-color: #d4c3ff;
+  color: #6500cc;
+}
+
+/* Task Info */
+.task-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.task-count {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.task-deadline {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 6px;
+  border-radius: 6px;
+  background-color: #d4f6d4;
+  color: #007700;
+}
+
+/* Avatar */
+.avatar {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--card-bg);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .App {
+    padding-top: 80px;
+  }
+
+  .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
