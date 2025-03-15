@@ -71,16 +71,6 @@ npm start
 3. **Track progress** and update task status.
 4. **Collaborate in real-time** using WebSockets.
 
-## 🚀 Deployment
-### **Frontend:**
-- Hosted on **Vercel** – [Visit Live App](https://your-vercel-app-url)
-
-### **Backend:**
-- Hosted on **MongoDB Atlas** for database scalability.
-
-## 📜 License
-This project is **MIT Licensed** – feel free to use and improve it!
-
 ## 🙌 Contributions
 Contributions are welcome! Follow these steps:
 1. Fork the repository
