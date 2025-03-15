@@ -1,87 +1,111 @@
 # Project Management Tool
 
-## 🚀 Overview
-The **Project Management Tool** is a web-based application designed to help teams efficiently manage tasks, collaborate in real-time, and track project progress. Built with **React.js** and **Express.js**, the tool provides a seamless experience for task allocation, progress tracking, and team communication.
+## 📌 Overview
+This **Project Management Tool** is a full-stack web application built using **React.js** for the frontend and **Express.js with MongoDB** for the backend. It provides an efficient platform for teams to create, assign, track, and manage tasks seamlessly. The application supports authentication, real-time updates, and user role management to enhance productivity.
 
-## ✨ Features
-- 🗂 **Task Management** – Create, assign, update, and delete tasks effortlessly.
-- 📅 **Project Tracking** – Monitor project milestones and deadlines.
-- 🔄 **Real-Time Updates** – Instant task updates using **WebSockets (Socket.io)**.
-- 🔐 **Secure Authentication** – JWT-based authentication system.
-- ⚡ **Efficient State Management** – Powered by **React Context API / Redux**.
-- 📊 **Scalable & Optimized** – Hosted on **Vercel** (Frontend) and **MongoDB Atlas** (Database).
+---
+
+## 🚀 Features
+- **User Authentication** (JWT-based login & signup)
+- **Task Management** (Create, update, delete, and assign tasks)
+- **Real-time Updates** (WebSockets/Sockets.io for instant changes)
+- **Role-based Access Control** (Admin, Team Leader, and Team Members)
+- **State Management** (React Context API / Redux)
+- **Notifications System** (Email alerts for task assignments)
+- **Dark Mode Support** (User-friendly UI/UX with Material UI)
+- **Responsive Design** (Optimized for desktop and mobile devices)
+- **Deployment-ready** (Vercel for frontend, MongoDB Atlas for database)
+
+---
 
 ## 🛠️ Tech Stack
-| Component        | Technology Used |
-|-----------------|----------------|
-| **Frontend**    | React.js, Material UI |
-| **Backend**     | Express.js, Node.js |
-| **Database**    | MongoDB Atlas (NoSQL) |
-| **Authentication** | JWT (JSON Web Token) |
+
+| Component        | Technology Used               |
+|-----------------|--------------------------------|
+| **Frontend**    | React.js, Material UI         |
+| **Backend**     | Express.js, Node.js           |
+| **Database**    | MongoDB (MongoDB Atlas)       |
+| **Authentication** | JWT (JSON Web Token)       |
 | **State Management** | React Context API / Redux |
 | **Real-Time Updates** | WebSockets / Socket.io |
 | **Deployment**  | Vercel (Frontend), MongoDB Atlas (Database) |
 
-## 🔧 Installation & Setup
-### Prerequisites
-- **Node.js (>=14.0.0)** installed
-- **MongoDB Atlas Account**
-- **Git** installed
+---
 
+## 🔧 Installation & Setup
 ### 1️⃣ Clone the Repository
-```sh
+```bash
 git clone https://github.com/Kaushik00007/Project-Management-Tool
-cd Project-Management-Tool
+cd project-management-tool
 ```
 
 ### 2️⃣ Install Dependencies
-#### Backend Setup:
-```sh
+#### Backend
+```bash
 cd backend
 npm install
 ```
-#### Frontend Setup:
-```sh
-cd ../frontend
+#### Frontend
+```bash
+cd frontend
 npm install
 ```
 
 ### 3️⃣ Set Up Environment Variables
-Create a **.env** file inside the backend folder and add:
+Create a `.env` file in the **backend** directory and add the following:
+
 ```env
-MONGO_URI=your_mongodb_atlas_url
-JWT_SECRET=your_secret_key
+# Server Configuration
+PORT=5000
+
+# Database Configuration
+MONGO_URI=mongodb://127.0.0.1:27017/project-management-tool
+
+# Authentication & Security
+JWT_SECRET=your_jwt_secret_key
+JWT_EXPIRATION=7d
+
+# CORS Configuration
+CLIENT_URL=http://localhost:3000
+
+# WebSockets (For Real-time Updates)
+SOCKET_PORT=6000
+
+# Deployment (For Production Mode)
+NODE_ENV=development  # Change to 'production' in production environments
 ```
 
-### 4️⃣ Run the Application
-#### Start Backend Server:
-```sh
+---
+
+## 📦 Running the Project
+### 1️⃣ Start the Backend Server
+```bash
 cd backend
 npm start
 ```
-#### Start Frontend Server:
-```sh
+### 2️⃣ Start the Frontend
+```bash
 cd frontend
 npm start
 ```
+The project will be accessible at **http://localhost:3000**.
 
-## 📌 Usage
-1. **Sign up/Login** with secure JWT authentication.
-2. **Create & manage tasks** for different projects.
-3. **Track progress** and update task status.
-4. **Collaborate in real-time** using WebSockets.
-
-## 🙌 Contributions
-Contributions are welcome! Follow these steps:
-1. Fork the repository
-2. Create a new branch 
-3. Commit your changes
-4. Open a pull request
-
-## 📧 Contact
-For any queries, reach out via:
-- 📩 Email: kaushi00007@gmail.com
-- 🔗 LinkedIn: https://www.linkedin.com/in/kaushik-k-dev
+## 🎯 Conclusion
+This **Project Management Tool** provides an efficient way to track and manage tasks, improving productivity for teams and organizations. With real-time updates, secure authentication, and an intuitive UI, it ensures seamless collaboration. Future improvements aim to make the tool even more powerful and scalable.
 
 ---
-💡 *Built with ❤️ using React.js, Express.js, and MongoDB.*
+
+## 📌 Contributing
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-branch`
+3. Commit your changes: `git commit -m 'Added new feature'`
+4. Push to the branch: `git push origin feature-branch`
+5. Open a Pull Request.
+
+---
+
+## 📞 Contact
+For any queries or contributions, feel free to reach out:
+- 📧 Email: kaushi00007@gmail.com  
+- 🔗 LinkedIn: https://www.linkedin.com/in/kaushik-k-dev
+- 🌍 GitHub: https://github.com/Kaushik00007/Kaushik00007
